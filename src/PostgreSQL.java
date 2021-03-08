@@ -2,7 +2,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class PostgreSQL {
+public class PostgreSQL implements IDB {
+
     public Connection getConnection() throws SQLException, ClassNotFoundException {
         String databaseURL = "jdbc:postgresql://localhost:5432/meloman";
 

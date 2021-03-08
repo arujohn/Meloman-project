@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.Date;
 
-public class Database {
+public class Database implements IDatabase {
     PostgreSQL postgreSQL;
 
     public Database() {

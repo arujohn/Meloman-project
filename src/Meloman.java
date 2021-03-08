@@ -1,32 +1,37 @@
 import java.util.Scanner;
 
+//Our app
 public class Meloman {
-    private Scanner input;
-    private Controller controller;
+    private Scanner input; //Scanner instance for holding the user's input
+    private Controller controller; //the instance of Controller class
 
+    //We initialize fields in default constructor
     public Meloman() {
         controller = new Controller();
-        input = new Scanner(System.in);
+        input = new Scanner(System.in); // the input will be taken in console (System.in)
     }
 
+    //The main flow and loop of the app
     public void start() {
-        while(true) {
+        while(true) { //infinite loop
+            //The main menu of the app
             System.out.println("Welcome to Meloman Shop!");
             System.out.println("1. See the categories of products");
             System.out.println("2. Exit");
 
-            int a = input.nextInt();
+            int a = input.nextInt(); //hold input of the user
 
             if(a == 1) {
-                buyProducts();
+                seeProducts(); //call the buyProducts() method
             } else if (a == 2) {
-                input.close();
-                System.exit(0);
+                input.close(); //close the input
+                break; //break infinite loop
             }
         }
     }
 
-    public void buyProducts() {
+    // seeProducts() method demonstrates categories, products and processes users purchases
+    public void seeProducts() {
         controller.displayCategories();
         System.out.println("Enter the number of the category whose products you want to see:");
 
